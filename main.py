@@ -1,3 +1,6 @@
+"""
+This file plots the graph.
+"""
 import random
 import string
 import matplotlib.pyplot as plt
@@ -12,13 +15,13 @@ def stats(length):
     :param length: The actual length of c, that then we will try to guess.
     :return: It returns the time that was necessary to crack the password.
     """
-    target.c = ''.join(random.choices(string.ascii_lowercase, k=length))
-    print(f'The password of length {int(length)} to guess is {target.c}')
+    target.C = ''.join(random.choices(string.ascii_lowercase, k=length))
+    print(f'The password of length {int(length)} to guess is {target.C}')
     result = attack.attack(attack.guess_length())[0]
     time = attack.attack(attack.guess_length())[1]
     print(f'The guessed password of length {int(length)} is {result} and it required {int(time)}'
-          f'nanoseconds to crack it')
-    if target.c == result:
+          f' nanoseconds to crack it')
+    if target.C == result:
         return time
     return 0
 
