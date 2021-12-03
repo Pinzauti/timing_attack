@@ -34,7 +34,7 @@ def match(password):
         value = False
 
     if value:
-        for i in range(len(C)):
+        for i, _ in enumerate(C):
             k = 0
             while k < 1500:
                 if C[i] != password[i]:
